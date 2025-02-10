@@ -53,21 +53,19 @@ class MainWindow(QMainWindow):
             print("Error loading data.json:", e)
             raw_data = {}
 
-        # Process the data.
-        # We expect each value to be a string: "description:Topic>Subtopic:PDF_link"
         self.data = {}
         for patent, value in raw_data.items():
-            parts = value.split(":", 2)  # at most 3 parts
-            if len(parts) == 3:
-                description, classification, pdf_link = parts
-            else:
-                description = parts[0].strip() if parts else ""
-                classification = ""
-                pdf_link = ""
+            # Each value is expected to be a dictionary with keys "url" and "description".
+            url = value.get("url", "").strip()
+            description = value.get("description", "").strip()
+
+            # Use the provided classification if available; otherwise, default to "Uncategorized".
+            classification = value.get("classification", "Uncategorized").strip()
+            
             self.data[patent] = {
-                "description": description.strip(),
-                "classification": classification.strip(),  # expected to be "Topic>Subtopic"
-                "pdf_link": pdf_link.strip()
+                "description": description,
+                "classification": classification,  # For tree view organization.
+                "pdf_link": url  # Using the URL from JSON as the PDF link.
             }
 
     def handle_search(self):

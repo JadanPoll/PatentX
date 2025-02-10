@@ -1,0 +1,18 @@
+{
+    "Patent A": {
+      "url": "https://www.africau.edu/images/default/sample.pdf",
+      "description": "An innovative approach to data processing in modern computing.",
+      "classification": "Technology>Software"
+    },
+    "Patent B": {
+      "url": "https://www.africau.edu/images/default/sample.pdf",
+      "description": "A breakthrough technology in medical diagnostics.",
+      "classification": "Biotechnology>Pharmaceutical"
+    },
+    "Patent C": {
+      "url": "https://www.africau.edu/images/default/sample.pdf",
+      "description": "Revolutionary design in hardware manufacturing.",
+      "classification": "Technology>Hardware"
+    }
+  }
+  
