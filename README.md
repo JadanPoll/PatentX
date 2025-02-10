@@ -1,1 +1,1 @@
-### Is it possible to study via just data from patents?
+### Learning through XPatent Networks
